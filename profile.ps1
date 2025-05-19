@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "C:\Development\github\dotfiles\oh-my-posh\fredrikoller.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "{path-to}\dotfiles\oh-my-posh\fredrikoller.omp.json" | Invoke-Expression
 Import-Module PSReadLine
 Import-Module -Name Terminal-Icons
 
