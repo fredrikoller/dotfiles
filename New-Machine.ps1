@@ -4,6 +4,9 @@ param(
     [string]$Mode = "Work"
 )
 
+winget install Discord.Discord -e -h --accept-package-agreements
+winget install Spotify.Spotify -e -h --accept-package-agreements
+
 if ($Mode -eq "Work") {
     # Enable WSL 2
     wsl --install
@@ -20,9 +23,10 @@ if ($Mode -eq "Work") {
     winget install Microsoft.PowerToys -e -h --accept-package-agreements
     winget install Microsoft.Microsoft.AzureCLI -e -h --accept-package-agreements
     winget install Microsoft.VisualStudioCode -e -h --accept-package-agreements
-    winget install Microsoft.VisualStudio.2022.Community -e -h --accept-package-agreements
+    winget install Microsoft.VisualStudio.2026.Community -e -h --accept-package-agreements
     winget install JanDeDobbeleer.OhMyPosh -e -h --accept-package-agreements
     winget install Microsoft.Azure.FunctionsCoreTools -e -h --accept-package-agreements
+    winget install Microsoft.AzureCLI -e -h --accept-package-agreements
 
     Install-Module -Name PowerColorLS -Repository PSGallery
     Install-Module -Name Terminal-Icons -Repository PSGallery
