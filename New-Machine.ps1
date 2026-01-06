@@ -4,8 +4,8 @@ param(
     [string]$Mode = "Work"
 )
 
-winget install Discord.Discord -e -h --accept-package-agreements
-winget install Spotify.Spotify -e -h --accept-package-agreements
+# winget install Discord.Discord -e -h --accept-package-agreements --source winget
+# winget install Spotify.Spotify -e -h --accept-package-agreements --source winget
 
 if ($Mode -eq "Work") {
     # Enable WSL 2
@@ -16,17 +16,18 @@ if ($Mode -eq "Work") {
     wsl --install -d Ubuntu
 
     # Install PowerShell using winget
-    winget install Microsoft.PowerShell -e --accept-package-agreements -h
-    winget install Microsoft.Git -e --accept-package-agreements -h
-    winget install Microsoft.WindowsTerminal -e -h --accept-package-agreements
-    winget install Microsoft.Teams -e -h --accept-package-agreements
-    winget install Microsoft.PowerToys -e -h --accept-package-agreements
-    winget install Microsoft.Microsoft.AzureCLI -e -h --accept-package-agreements
-    winget install Microsoft.VisualStudioCode -e -h --accept-package-agreements
-    winget install Microsoft.VisualStudio.2026.Community -e -h --accept-package-agreements
-    winget install JanDeDobbeleer.OhMyPosh -e -h --accept-package-agreements
-    winget install Microsoft.Azure.FunctionsCoreTools -e -h --accept-package-agreements
-    winget install Microsoft.AzureCLI -e -h --accept-package-agreements
+    winget install Microsoft.PowerShell -e --accept-package-agreements -h --source winget
+    winget install Microsoft.Git -e --accept-package-agreements -h --source winget
+    winget install Microsoft.WindowsTerminal -e -h --accept-package-agreements --source winget
+    winget install Microsoft.Teams -e -h --accept-package-agreements --source winget
+    winget install Microsoft.PowerToys -e -h --accept-package-agreements --source winget
+    winget install Microsoft.Microsoft.AzureCLI -e -h --accept-package-agreements --source winget
+    winget install Microsoft.VisualStudioCode -e -h --accept-package-agreements --source winget
+    winget install Microsoft.VisualStudio.Community -e -h --accept-package-agreements --source winget
+    winget install JanDeDobbeleer.OhMyPosh -e -h --accept-package-agreements --source winget
+    winget install Microsoft.Azure.FunctionsCoreTools -e -h --accept-package-agreements --source winget
+    winget install Microsoft.AzureCLI -e -h --accept-package-agreements --source winget
+    winget install GitHub.Copilot -e -h --accept-package-agreements --source winget
 
     Install-Module -Name PowerColorLS -Repository PSGallery
     Install-Module -Name Terminal-Icons -Repository PSGallery
