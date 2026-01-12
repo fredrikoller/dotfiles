@@ -17,16 +17,8 @@ blocks:
         powerline_symbol: ""
         foreground: "#ffffff"
         background: "#05668d"
-        properties:
+        options:
           style: folder
-      - type: az
-        style: powerline
-        powerline_symbol: 
-        foreground: "#ffffff"
-        background: "#31572c"
-        template: "  {{ .EnvironmentName }}"
-        properties:
-          source: cli
       - type: git
         style: powerline
         powerline_symbol: 
@@ -43,16 +35,9 @@ blocks:
           (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
           {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{
           end }}"
-        properties:
+        options:
           fetch_status: true
           fetch_upstream_icon: true
           untracked_modes:
             /Users/user/Projects/oh-my-posh/: no
           source: cli
-          mapped_branches:
-            development: "🔧 "
-            main: "✅ "
-            feature/*: "🚀 "
-            feat/*: "🚀 "
-            bug/*: "🐛 "
-            hotfix/*: "🔥 "
